@@ -52,78 +52,44 @@ window.__5szm2kaj = function (details) {
     var updated = updateTiplate(details.data.tiplates.tip)             
     var content = updated.querySelector('[data-iridize-id="content"]').innerHTML = currentStep.action.contents['#content']    
     var prevBt = updated.querySelector('[data-iridize-role="prevBt"]').innerHTML //dosnt prestn me the Back btn
-    
-    var popupPosiTop = document.querySelector('.sttip').style.top ="50%"
-    var popupPosiLeft = document.querySelector('.sttip').style.left ="50%"
+
+    if(index == 0){
+    document.querySelector('.sttip').style.position ="fixed"
+    document.querySelector('.sttip').style.top ='60px'
+    document.querySelector('.sttip').style.left ="814px"
+    }
+
 
     var stepCounter =updated.querySelector('[data-iridize-role="stepCount"]').innerText = ` ${index + 1}`
     var stepsCounter =updated.querySelector('[data-iridize-role="stepsCount"]').innerText = ` 4`
     
-    var nextBt = updated.querySelector('[data-iridize-role="nextBt"]').addEventListener("click",function(){
-//     var popupPosi = updated.querySelector('.k1zIA').setAttribute("style","margin-top: 60px")
-//     var popupPosi = updated.querySelector('.k1zIA').style.left ='-120px'
-//      var popupPosi = updated.querySelector('.sttip').setAttribute("style","left: 60px")
+    var nextBt = updated.querySelector('[data-iridize-role="nextBt"]').addEventListener("click",() =>{
+
      
-    
-    if(index ==  0){
-       
-    }
 
     stepCounter =updated.querySelector('[data-iridize-role="stepCount"]').innerText = ` ${index + 2}`
 
         if(index == 3){
-         updateTiplate(null)
-         
+         document.querySelector('.sttip').style.display ="none"
              return 
          }else{
-
-          
-        
          index = index + 1;
          currentStep = staps[index]
          if(index != '0' )
 //          
          content = updated.querySelector('[data-iridize-id="content"]').innerHTML = currentStep.action.contents['#content']
+        if(index == 1){
+         document.querySelector('.sttip').style.position ="fixed"
+         document.querySelector('.sttip').style.top ="13%"
+         document.querySelector('.sttip').style.left ="40%"
+            }
 
-         document.body.appendChild(elTooltip);
      } })
 
-    var closePop = updated.querySelector('[data-iridize-role="closeBt"]').addEventListener("click",function(){
-        console.log('hii')
-        closeBtn = false;
-        updateTiplate(null)
-        console.log('closeBtn',closeBtn)
-//         node.appendChild(node)
+    var closePop = updated.querySelector('[data-iridize-role="closeBt"]').addEventListener("click",() =>{
+        document.querySelector('.sttip').style.display ="none"
 
     })
-//   const trem1 = updated.querySelector('[data-iridize-id="content"]').innerText ='Hi Dor'
-
-//     const staps = (details.data.structure.steps).map(stap=>{
-
-//         if(stap.id == stapNum){
-//        switch(stap.id){
-//     case '1':
-//       const title = updated.querySelector('[data-iridize-role="title"]').innerHTML = stap.action.contents['#content']
-//         break;
-//         case '3':
-//      const titl3 = updated.querySelector('[data-iridize-role="title"]').innerHTML = stap.action.contents['#content']
-//         break;
-//         case '4':
-//      const titl4 = updated.querySelector('[data-iridize-role="title"]').innerHTML = stap.action.contents['#content']
-//         break;
-//         case '5':
-//      const titl5 = updated.querySelector('[data-iridize-role="title"]').innerHTML = stap.action.contents['#content']
-//         break;
-//          case 'eol0':
-// //     const tremeol0 = updated.querySelector('[data-iridize-role="title"]').innerHTML = stap.action.contents['#content']
-//         break;
-//      break;
-//      default:
-
-//     }}})
-//     console.log('elTooltip',elTooltip)
-// document.body.appendChild(elTooltip);
-//     document.body.appendChild(elTooltip);
 
 }
 document.body.appendChild(elTooltip);
