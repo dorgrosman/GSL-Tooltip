@@ -64,8 +64,12 @@ window.__5szm2kaj = function (details) {
     var stepsCounter =updated.querySelector('[data-iridize-role="stepsCount"]').innerText = ` 4`
     
     var nextBt = updated.querySelector('[data-iridize-role="nextBt"]').addEventListener("click",() =>{
-
+//     var popupPosi = updated.querySelector('.k1zIA').setAttribute("style","margin-top: 60px")
+//     var popupPosi = updated.querySelector('.k1zIA').style.left ='-120px'
+//      var popupPosi = updated.querySelector('.sttip').setAttribute("style","left: 60px")
      
+    
+   
 
     stepCounter =updated.querySelector('[data-iridize-role="stepCount"]').innerText = ` ${index + 2}`
 
@@ -76,13 +80,23 @@ window.__5szm2kaj = function (details) {
          index = index + 1;
          currentStep = staps[index]
          if(index != '0' )
-//          
+         
          content = updated.querySelector('[data-iridize-id="content"]').innerHTML = currentStep.action.contents['#content']
         if(index == 1){
          document.querySelector('.sttip').style.position ="fixed"
-         document.querySelector('.sttip').style.top ="13%"
-         document.querySelector('.sttip').style.left ="40%"
-            }
+         document.querySelector('.sttip').style.top ="50px"
+         document.querySelector('.sttip').style.left ="1580px"
+          }else if(index == 2){
+         document.querySelector('.sttip').style.position ="fixed"
+         document.querySelector('.sttip').style.top ='450px'
+         document.querySelector('.sttip').style.left ="814px"
+         }else if(index == 3){
+          document.querySelector('.sttip').style.position ="fixed"
+          document.querySelector('.sttip').style.left ="750px"
+          document.querySelector('.sttip').style.top ='500px'
+         }
+        
+
 
      } })
 
